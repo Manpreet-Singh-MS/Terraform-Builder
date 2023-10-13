@@ -22,3 +22,8 @@ resource "aws_instance" "aws_ec2" {
 output "aws_instance_ip" {
     value = aws_instance.aws_ec2.public_ip
 }
+
+resource "aws_ec2_instance_state" "aws_ec2_stopped" {
+    instance_id = aws_instance.aws_ec2.id
+    state = "stopped"
+}
